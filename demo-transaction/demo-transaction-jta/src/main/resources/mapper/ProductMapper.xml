@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jzg.demo.transaction.jta.dao.db1.ProductMapper">
+    <resultMap id="BaseResultMap" type="com.jzg.demo.transaction.tcc.customer.model.Product">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="product_name" jdbcType="VARCHAR" property="productName" />
+    <result column="customer_id" jdbcType="BIGINT" property="customerId" />
+    <result column="indate" jdbcType="TIMESTAMP" property="indate" />
+    </resultMap>
+
+    <resultMap id="productResultMap" type="com.jzg.demo.transaction.jta.dto.ProductDto">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="product_name" jdbcType="VARCHAR" property="productName" />
+        <result column="customer_id" jdbcType="BIGINT" property="customerId" />
+        <result column="indate" jdbcType="TIMESTAMP" property="indate" />
+        <!--使用resultMap属性引用上面的实体映射-->
+        <association property="customer" column="customer_id" jdbcType="BIGINT" javaType="com.jzg.demo.transaction.tcc.customer.model.Customer" select="com.jzg.demo.transaction.jta.dao.CustomerMapper.selectByPrimaryKey">
+        </association>
+    </resultMap>
+
+    <resultMap id="productResultMap1" type="com.jzg.demo.transaction.jta.dto.ProductDto">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="product_name" jdbcType="VARCHAR" property="productName" />
+        <result column="customer_id" jdbcType="BIGINT" property="customerId" />
+        <result column="indate" jdbcType="TIMESTAMP" property="indate" />
+        <!--使用resultMap属性引用上面的实体映射-->
+        <association property="customer" column="customer_id" jdbcType="BIGINT" javaType="com.jzg.demo.transaction.tcc.customer.model.Customer" resultMap="com.jzg.demo.transaction.jta.dao.CustomerMapper.BaseResultMap">
+        </association>
+    </resultMap>
+
+
+    <parameterMap id="Product" type="com.jzg.demo.transaction.tcc.customer.model.Product"></parameterMap>
+
+
+    <!--自定义SQL片段-->
+    <sql id="productColumns">id, product_name, customer_id, indate</sql>
+
+
+
+    <sql id="productPageSql">
+        <where>
+            <if test="loginName != null">
+                login_name like CONCAT(CONCAT('%', #{loginName}), '%')
+            </if>
+        </where>
+    </sql>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from `product`
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+
+  <insert id="insert" parameterType="com.jzg.demo.transaction.tcc.customer.model.Product">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into `product` (product_name, customer_id, indate)
+    values (#{productName,jdbcType=VARCHAR}, #{customerId,jdbcType=BIGINT}, #{indate,jdbcType=TIMESTAMP})
+  </insert>
+
+  <insert id="insert1" parameterMap="Product" useGeneratedKeys="true" keyProperty="id">
+  insert into `product` (product_name, customer_id, indate)
+  values (#{productName,jdbcType=VARCHAR}, #{customerId,jdbcType=BIGINT}, #{indate,jdbcType=TIMESTAMP})
+</insert>
+
+    <insert id="insert2" parameterMap="Product" useGeneratedKeys="true" keyProperty="id">
+        insert into `product` (product_name, customer_id, indate)
+        select #{productName,jdbcType=VARCHAR}, #{customerId,jdbcType=BIGINT}, #{indate,jdbcType=TIMESTAMP}
+        from dual
+        where not exists(select id from product where product_name = #{productName})
+    </insert>
+
+    <insert id="insertOrUpdate" parameterMap="Product">
+        insert into `product` (id, product_name, customer_id, indate)
+        values (#{id}, #{productName}, #{customerId}, #{indate})
+        on DUPLICATE key update product_name = #{productName}
+    </insert>
+
+
+
+  <update id="updateByPrimaryKey" parameterType="com.jzg.demo.transaction.tcc.customer.model.Product">
+    update `product`
+    set product_name = #{productName,jdbcType=VARCHAR},
+      customer_id = #{customerId,jdbcType=BIGINT},
+      indate = #{indate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, product_name, customer_id, indate
+    from `product`
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, product_name, customer_id, indate
+    from `product`
+  </select>
+
+
+  <!--使用自定义SQl片段-->
+  <select id="selectAll2" resultMap="BaseResultMap">
+    select <include refid="productColumns"></include>
+    from `product`
+  </select>
+
+
+
+  <!--使用语法if when-->
+  <select id="findByCondition" resultMap="BaseResultMap">
+      select <include refid="productColumns"></include>
+      from `product`
+      <where>
+        <if test="productName != null">
+          AND product_name like CONCAT(CONCAT('%',#{productName}), '%')
+        </if>
+        <choose>
+            <when test="productName != null">
+            AND product_name like CONCAT(CONCAT('%',#{productName}), '%')
+            </when>
+            <otherwise>
+            AND product_name = #{productName}
+            </otherwise>
+        </choose>
+      </where>
+  </select>
+
+    <!--将实体不为空的属性更新 set if-->
+     <update id="updateById" parameterType="com.jzg.demo.transaction.tcc.customer.model.Product">
+        update `product`
+        <set>
+            <if test="productName != null">
+                product_name = #{productName},
+            </if>
+            <if test="customerId != null">
+                customer_id = #{customerId},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <update id="updateByIdTrim" parameterType="com.jzg.demo.transaction.tcc.customer.model.Product">
+        update `product`
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="productName != null">
+                product_name = #{productName},
+            </if>
+            <if test="customerId != null">
+                customer_id = #{customerId},
+            </if>
+        </trim>
+        where id = #{id}
+    </update>
+
+
+    <!--foreach语法-->
+    <select id="findByIds" resultMap="BaseResultMap">
+        select <include refid="productColumns"></include>
+        from `product`
+        <where>
+            id in
+            <foreach item="id" collection="ids" open="(" separator="," close=")">
+                #{id}
+            </foreach>
+        </where>
+    </select>
+
+    <!--批量插入-->
+    <insert id="insertBatch"  parameterType="java.util.List"  useGeneratedKeys="true" keyProperty="id">
+        /*parameterType="java.util.List"可以省略，Mybatis会自动判断参数类型*/
+        insert into `product` (product_name, customer_id, indate)
+        <trim prefix="values " suffixOverrides=",">
+            /*separator="," 不可以省略；item="product"是集合中每一个元素进行迭代时的别名，可以随便取。*/
+            <foreach collection="list" item="product" separator=",">
+                <trim suffix=")" prefix="(" suffixOverrides=",">
+                #{product.productName},#{product.customerId},#{product.indate}
+                </trim>
+            </foreach>
+        </trim>
+    </insert>
+
+
+    <!--一对一示例 发送一次请求-->
+    <select id="findProductAndCustomer" resultMap="productResultMap">
+        select
+        *
+        from `product` p
+        left join `customer` c on c.id = p.customer_id
+        limit 5
+    </select>
+
+    <!--一对一示例 发送多次请求-->
+    <select id="findProductAndCustomer1" resultMap="productResultMap1">
+        select
+              *
+        from `product` p
+        limit 5
+    </select>
+
+
+
+
+
+
+
+
+
+
+    <!--自定义-->
+    <select id="findProductByPage1" resultMap="BaseResultMap">
+        select id, product_name, customer_id, indate
+        from `product`
+        <include refid="productPageSql"></include>
+        limit #{pageIndex},#{pageSize}
+    </select>
+    <select id="findProductByPageCount1" resultType="integer">
+        select count(1) from `product`
+        <include refid="productPageSql"></include>
+    </select>
+</mapper>

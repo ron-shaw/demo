@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE urlrewrite
+        PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+
+<urlrewrite use-query-string="true">
+
+    <!--<rule>
+        <note>新车置换（不带参数）</note>
+        <from>^/zhihuan$</from>
+        <to>/car/carReplace/</to>
+    </rule>
+    <rule>
+        <note>新车置换（带参数）</note>
+        <from>^/zhihuan-s(\d*)-r(\d{4}-\d{1,2}-\d{1,2})-m(\d+)-c(\d+)$</from>
+        <to>/car/carReplace/index?styleId=$1&amp;regDate=$2&amp;mileage=$3&amp;cityId=$4</to>
+    </rule>
+
+    <rule>
+        <note>易鑫贷款买车估值yixin-s11086-r2014-01-01-m5000-c201.html</note>
+        <from>^/yixin-s(\d*)-r(\d{4}-\d{1,2}-\d{1,2})-m(\d+)-c(\d+).html$</from>
+        <to>/yixin/buyerAppraise?styleId=$1&amp;regDate=$2&amp;mileage=$3&amp;cityId=$4</to>
+    </rule>
+    <rule>
+        <note>易鑫贷款买车估值yixin-s11086-r2014-01-01-m5000-c201.html</note>
+        <from>^/yixin-s(\d*)-r(\d{4}-\d{1,2}-\d{1,2})-m(\d+)-c(\d+).html\?v=([\s\S]*)$</from>
+        <to>/yixin/buyerAppraise?styleId=$1&amp;regDate=$2&amp;mileage=$3&amp;cityId=$4&amp;version=$5</to>
+    </rule>
+    <rule>
+        <from>^/ershouche/$</from>
+        <to type="forward">/ershouche/index</to>
+    </rule>
+    <rule>
+        <note>匹配seo地址:</note>
+        <from>^/ershouche/([c+[\s\S]* | c | m+[\s\S]*]+)/([- | [\s\S]*+ - | [\s\S]* + - +[\s\S]* + -]+)j([26537]+)([\s\S]*).html</from>
+        <to type="forward">/ershouche/accept?cNameOrMakeName=$1&amp;makeNameOrModelName=$2&amp;sore=$3&amp;conditions=$4</to>
+    </rule>
+    <rule>
+        <note>搜索地址匹配：s0-0-0c0-0k5-10am0o2e0-0-0-0-0-0-0-0p1t 兼容老版本地址</note>
+        <from>^/ershouche/gaojilist/s([0-9]\d{0,10}-[0-9]\d{0,10})-0c([0-9]\d{0,10}-[0-9]\d{0,10})k([0-9]\d{0,10}-[0-9]\d{0,10})am([0-9]\d{0,10})o([0-9]\d{0,10})e([0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10})p1t(.*)</from>
+        <to type="forward">/ershouche/searchAccept?makeIdAndModelId=$1&amp;cidAndPid=$2&amp;beginPriceAndEndPrice=$3&amp;carMils=$4&amp;sore=$5&amp;conditions=$6&amp;styleFullName=$7</to>
+    </rule>
+    <rule>
+        <note>搜索地址匹配：s0-0-0c0-0k5-10am0o2e0-0-0-0-0-0-0-0-0-0-0-0p1t 新版地址多四个参数</note>
+        <from>^/ershouche/gaojilist/s([0-9]\d{0,10}-[0-9]\d{0,10})-0c([0-9]\d{0,10}-[0-9]\d{0,10})k([0-9]\d{0,10}-[0-9]\d{0,10})am([0-9]\d{0,10})o([0-9]\d{0,10})e([0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10}-[0-9]\d{0,10})p1t(.*)</from>
+        <to type="forward">/ershouche/searchAccept?makeIdAndModelId=$1&amp;cidAndPid=$2&amp;beginPriceAndEndPrice=$3&amp;carMils=$4&amp;sore=$5&amp;conditions=$6&amp;styleFullName=$7</to>
+    </rule>
+    <rule>
+        <note>只包含城市</note>
+        <from>^/ershouche/(.*)/$</from>
+        <to type="forward">/ershouche/accept?cNameOrMakeName=$1</to>
+    </rule>
+    <rule>
+        <note>只包含品牌</note>
+        <from>^/ershouche/(.*)/(.*).html</from>
+        <to type="forward">/ershouche/accept?cNameOrMakeName=$1&amp;makeNameOrModelName=$2</to>
+    </rule>
+    <rule>
+        <note>爱车估值</note>
+        <from>^/sale-s(\d*)-r(\d{4}-\d{1,2}-\d{1,2})-m(\d+)-c(\d+)-y([\s\S]*)-j([\s\S]*)-h([\s\S]*)$</from>
+        <to>/sellappraise/list?styleid=$1&amp;dtRegDate=$2&amp;mileage=$3&amp;cityid=$4&amp;color=$5&amp;kpje=$6&amp;chesun=$7</to>
+    </rule>
+    <rule>
+        <note>买车查价</note>
+        <from>^/buy-s(\d*)-r(\d{4}-\d{1,2}-\d{1,2})-m(\d+)-c(\d+)-y([\s\S]*)-j([\s\S]*)-h([\s\S]*)$</from>
+        <to>/buyappraise/list?styleid=$1&amp;dtRegDate=$2&amp;mileage=$3&amp;cityid=$4&amp;color=$5&amp;kpje=$6&amp;chesun=$7</to>
+    </rule>
+    &lt;!&ndash;<rule>&ndash;&gt;
+        &lt;!&ndash;<note>估值排行</note>&ndash;&gt;
+        &lt;!&ndash;<from>^/gujia/baozhilvRank-c(\d*)-l(\d*).html$</from>&ndash;&gt;
+        &lt;!&ndash;<to>/buyappraise/gethedgeratioranking?cityid=$1&amp;modellevelid=$2</to>&ndash;&gt;
+    &lt;!&ndash;</rule>&ndash;&gt;
+
+    <rule>
+        <note>卖车</note>
+        <from>^/ershouche/salecar$</from>
+        <to>/carSource/sellcar</to>
+    </rule>
+    <rule>
+        <note>卖车 带参数</note>
+        <from>^/ershouche/salecar-s(\d*)-r(\d{4}-\d{1,2}-\d{1,2})-m(\d+)-c(\d+)$</from>
+        <to>/carSource/sellcar?styleid=$1&amp;regDate=$2&amp;mileage=$3&amp;cityid=$4</to>
+    </rule>
+    <rule>
+        <note>车抵贷 带参数</note>
+        <from>^/ershouche/cardidai-s(\d*)-r(\d{4}-\d{1,2}-\d{1,2})-m(\d+)-c(\d+).html$</from>
+        <to>/carOwnerLoan/index?styleid=$1&amp;regDate=$2&amp;mileage=$3&amp;cityid=$4</to>
+    </rule>
+    <rule>
+        <note>车抵贷</note>
+        <from>^/ershouche/cardidai.html$</from>
+        <to>/carOwnerLoan/index</to>
+    </rule>
+
+    <rule>
+        <note>活动 app的h5页链接不带返回</note>
+        <from>^/appv5/activePage.aspx$</from>
+        <to>/activity/list?isback=0&amp;from=103</to>
+    </rule>
+    <rule>
+        <note>活动 app的h5页链接不带返回</note>
+        <from>^//appv5/activePage.aspx$</from>
+        <to>/activity/list?isback=0&amp;from=103</to>
+    </rule>
+    <rule>
+        <note>车源申请贷款</note>
+        <from>^/appv5/carsourceloan.aspx\?csid=(\d+)&amp;csfrom=(\d+)$</from>
+        <to>/carSourceLoan/index?csid=$1&amp;csfrom=$2&amp;isback=0</to>
+    </rule>
+    <rule >
+        <note>车源申请贷款(解决ios APP 链接双斜杠404问题)</note>
+        <from>^//appv5/carsourceloan.aspx\?csid=(\d+)&amp;csfrom=(\d+)$</from>
+        <to>/carSourceLoan/index?csid=$1&amp;csfrom=$2&amp;isback=0</to>
+    </rule>
+
+    <rule>
+        <note>车源详情M站页面url地址</note>
+        <from>^/ershouche/mcarsourcedetail-(.*)-(.*).html$</from>
+        <to>/carSource/mcarsourcedetail?carSourceId=$1&amp;carSourceFrom=$2</to>
+    </rule>
+    <rule>
+        <note>车源详情APP分享页面url地址</note>
+        <from>^/carsourcedetail-(\d+)-(\d+)-(\d+).html$</from>
+        <to>/carSource/mcarsourcedetail?carSourceId=$1&amp;carSourceFrom=$2&amp;isShare=$3</to>
+    </rule>
+    <rule>
+        <note>车源详情APP分享页面url地址(微信分享被拼接参数)</note>
+        <from>^/carsourcedetail-(\d+)-(\d+)-(\d+).html\?([\s\S]*)$</from>
+        <to>/carSource/mcarsourcedetail?carSourceId=$1&amp;carSourceFrom=$2&amp;isShare=$3</to>
+    </rule>
+    <rule>
+        <note>车源详情APP分享页面url地址(安卓没带.html，微信分享被拼接参数)</note>
+        <from>^/carsourcedetail-(\d+)-(\d+)-(\d+)\?([\s\S]*)</from>
+        <to>/carSource/mcarsourcedetail?carSourceId=$1&amp;carSourceFrom=$2&amp;isShare=$3</to>
+    </rule>
+    <rule>
+        <note>车源详情APP分享页面url地址(安卓没带.html)</note>
+        <from>^/carsourcedetail-(\d+)-(\d+)-(\d+)</from>
+        <to>/carSource/mcarsourcedetail?carSourceId=$1&amp;carSourceFrom=$2&amp;isShare=$3</to>
+    </rule>
+    <rule>
+        <note>车源详情APP分享页面url地址(解决了IOS双斜杠问题)</note>
+        <from>^//carsourcedetail-(\d+)-(\d+)-(\d+).html$</from>
+        <to>/carSource/mcarsourcedetail?carSourceId=$1&amp;carSourceFrom=$2&amp;isShare=$3</to>
+    </rule>
+    <rule>
+        <note>车源详情APP分享页面url地址(解决了IOS双斜杠问题，微信分享被拼接参数)</note>
+        <from>^//carsourcedetail-(\d+)-(\d+)-(\d+).html\?([\s\S]*)$</from>
+        <to>/carSource/mcarsourcedetail?carSourceId=$1&amp;carSourceFrom=$2&amp;isShare=$3</to>
+    </rule>
+    <rule>
+        <note>车源详情APP页面url地址</note>
+        <from>^/carsourcedetail-(\d+)-(\d+).html$</from>
+        <to>/carSource/mcarsourcedetail?carSourceId=$1&amp;carSourceFrom=$2</to>
+    </rule>
+    <rule>
+        <note>网站资讯列表</note>
+        <from>^/cn/List-(\d+)-(\d+)$</from>
+        <to>/information/list?type=$1&amp;page=$2&amp;isshow=0</to>
+    </rule>
+    <rule>
+        <note>网站资讯详情</note>
+        <from>^/cn/Details_(\d{8})(\d+).html$</from>
+        <to>/information/detail?addtime=$1&amp;id=$2&amp;isshow=0</to>
+    </rule>
+    <rule>
+        <note>网站资讯详情</note>
+        <from>^/life/ArticleDetail-(\d+).html$</from>
+        <to>/information/detail?id=$1&amp;isshow=0</to>
+    </rule>
+    <rule>
+        <note>网站资讯详情（isshow=1,隐藏下载条）</note>
+        <from>^/life/ArticleDetail-(\d+).html\?isshow=(\d*)$</from>
+        <to>/information/detail?id=$1&amp;isshow=$2</to>
+    </rule>
+
+    <rule>
+        <note>h5资讯列表（isshow=1,隐藏头部）</note>
+        <from>^/appv5/articalList.aspx$</from>
+        <to>/information/list?type=1&amp;isshow=1</to>
+    </rule>
+    <rule>
+        <note>h5资讯列表（isshow=1,隐藏头部）</note>
+        <from>^//appv5/articalList.aspx$</from>
+        <to>/information/list?type=1&amp;isshow=1</to>
+    </rule>
+    <rule>
+        <note>h5资讯详情（isshow=1,隐藏头部）</note>
+        <from>^/appv5/articalDetail.aspx\?id=(\d+)$</from>
+        <to>/information/detail?id=$1&amp;isshow=1</to>
+    </rule>
+    <rule>
+        <note>h5资讯详情（isshow=1,隐藏头部）</note>
+        <from>^//appv5/articalDetail.aspx\?id=(\d+)$</from>
+        <to>/information/detail?id=$1&amp;isshow=1</to>
+    </rule>
+    <rule>
+        <note>原违章跳转</note>
+        <from>^/v5/Illegal.ashx\?userid=(\d+)$</from>
+        <to>/rightmenu/weizhang?uid=$1</to>
+    </rule>
+    <rule>
+        <note>原违章跳转</note>
+        <from>^//v5/Illegal.ashx\?userid=(\d+)$</from>
+        <to>/rightmenu/weizhang?uid=$1</to>
+    </rule>
+
+    <rule>
+        <note>参数配置页面（isback=0,隐藏头部）</note>
+        <from>^/appv5/styleConfigure.aspx\?sid=(\d+)$</from>
+        <to>/carSource/styleConfig?sid=$1&amp;isback=0</to>
+    </rule>
+    <rule>
+        <note>参数配置页面（isback=0,隐藏头部）</note>
+        <from>^//appv5/styleConfigure.aspx\?sid=(\d+)$</from>
+        <to>/carSource/styleConfig?sid=$1&amp;isback=0</to>
+    </rule>
+
+    <rule>
+        <note>原下载</note>
+        <from>^/download.html$</from>
+        <to>/static/html/download.html</to>
+    </rule>
+    <rule>
+        <note>原下载</note>
+        <from>^/appdown.html$</from>
+        <to>/static/html/download.html</to>
+    </rule>
+    <rule>
+        <note>原下载</note>
+        <from>^/appdown.html\?([\s\S]*)$</from>
+        <to>/static/html/download.html</to>
+    </rule>
+    <rule>
+        <note>今日头条估值</note>
+        <from>^/jzgguzhi.html$</from>
+        <to>/comAppraise/jzgAppraise</to>
+    </rule>
+    <rule>
+        <note>u迈</note>
+        <from>^/umguzhi.html$</from>
+        <to>/comAppraise/umAppraise</to>
+    </rule>
+    <rule>
+        <note>估值</note>
+        <from>^/guzhi.html$</from>
+        <to>/comAppraise/appraise</to>
+    </rule>
+    <rule>
+        <note>估值列表(无参数)</note>
+        <from>^/gujia/$</from>
+        <to>/appraise/reportList</to>
+    </rule>
+    <rule>
+        <note>估值列表(页码)</note>
+        <from>^/gujia/-p(\d+).html$</from>
+        <to>/appraise/reportList?pageNo=$1</to>
+    </rule>
+    <rule>
+        <note>估值列表(城市)</note>
+        <from>^/gujia/c([\s\S]*)/$</from>
+        <to>/appraise/reportList?citySpell=$1</to>
+    </rule>
+    <rule>
+        <note>估值列表(城市+页码)</note>
+        <from>^/gujia/c([\s\S]*)/-p(\d+).html$</from>
+        <to>/appraise/reportList?citySpell=$1&amp;pageNo=$2</to>
+    </rule>
+    <rule>
+        <note>估值列表(城市 +品牌)</note>
+        <from>^/gujia/c([\s\S]*)/([^\-]*).html$</from>
+        <to>/appraise/reportList?citySpell=$1&amp;makeSpell=$2</to>
+    </rule>
+
+    <rule>
+        <note>估值列表(城市 +品牌+页码)</note>
+        <from>^/gujia/c([\s\S]*)/([^\-]*)-p(\d+).html$</from>
+        <to>/appraise/reportList?citySpell=$1&amp;makeSpell=$2&amp;pageNo=$3</to>
+    </rule>
+    <rule>
+        <note>估值列表(城市 +品牌+车系)</note>
+        <from>^/gujia/c([\s\S]*)/([^\-]*)-([^\-]*).html$</from>
+        <to>/appraise/reportList?citySpell=$1&amp;makeSpell=$2&amp;modelSpell=$3</to>
+    </rule>
+    <rule>
+        <note>估值列表(城市 +品牌+车系+页码)</note>
+        <from>^/gujia/c([\s\S]*)/([^\-]*)-([^\-]*)-p(\d+).html$</from>
+        <to>/appraise/reportList?citySpell=$1&amp;makeSpell=$2&amp;modelSpell=$3&amp;pageNo=$4</to>
+    </rule>
+    <rule>
+        <note>估值列表(品牌)</note>
+        <from>^/gujia/m([\s\S]*)/$</from>
+        <to>/appraise/reportList?makeSpell=$1</to>
+    </rule>
+    <rule>
+        <note>估值列表(品牌+页码)</note>
+        <from>^/gujia/m([\s\S]*)/-p(\d+).html$</from>
+        <to>/appraise/reportList?makeSpell=$1&amp;pageNo=$2</to>
+    </rule>
+    <rule>
+        <note>估值列表(品牌+车系)</note>
+        <from>^/gujia/m([\s\S]*)/([^\-]*).html$</from>
+        <to>/appraise/reportList?makeSpell=$1&amp;modelSpell=$2</to>
+    </rule>
+    <rule>
+        <note>估值列表(品牌+车系+页码)</note>
+        <from>^/gujia/m([\s\S]*)/([^\-]*)-p(\d+).html$</from>
+        <to>/appraise/reportList?makeSpell=$1&amp;modelSpell=$2&amp;pageNo=$3</to>
+    </rule>
+    <rule>
+        <note>线索收集估值(来源)</note>
+        <from>^/xiansuo/pinggu-([\s\S]*).html$</from>
+        <to>/comAppraise/userclueAppraise?clueFrom=$1</to>
+    </rule>
+    <rule>
+        <note>线索收集估值(默认)</note>
+        <from>^/xiansuo/pinggu.html$</from>
+        <to>/comAppraise/userclueAppraise</to>
+    </rule>
+    <rule>
+        <note>线索卖车估值(来源)</note>
+        <from>^/xiansuo/sellcar-([\s\S]*).html$</from>
+        <to>/cluesystem/sellcarappraise?clueFrom=$1</to>
+    </rule>
+    <rule>
+        <note>线索卖车估值(来源)</note>
+        <from>^/xiansuo/sellcar.html$</from>
+        <to>/cluesystem/sellcarappraise</to>
+    </rule>
+    <rule>
+        <note>线索卖车估值报告</note>
+        <from>^/appreport-s(\d*)-r(\d{4}-\d{1,2}-\d{1,2})-m(\d+)-c(\d+)-f([\s\S]*)$</from>
+        <to>/cluesystem/sellcarappreport?styleid=$1&amp;dtRegDate=$2&amp;mileage=$3&amp;cityid=$4&amp;clueFrom=$5</to>
+    </rule>
+
+    <rule>
+        <note>最新线索卖车估值(来源)</note>
+        <from>^/xiansuo/carappraise.html$</from>
+        <to>/cluesystem/carappraise</to>
+    </rule>
+
+    <rule>
+        <note>汽车大师问答列表页</note>
+        <from>^/qcds/p(\d+)$</from>
+        <to>/qcds?pageNo=$1</to>
+    </rule>
+    <rule>
+        <note>汽车大师-追问详情</note>
+        <from>^/qcds/(\d*)-(\d*)$</from>
+        <to>/qcds/toTalkDetail?questionId=$1&amp;masterId=$2</to>
+    </rule>
+    <rule>
+        <note>BBS资讯分享页</note>
+        <from>^/fenxiang/information.aspx\?infoId=(\d*)$</from>
+        <to>/share/infomation?id=$1</to>
+    </rule>-->
+</urlrewrite>

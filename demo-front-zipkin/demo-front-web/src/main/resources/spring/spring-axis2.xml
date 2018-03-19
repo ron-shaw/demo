@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean id="estimateServiceStub" class="com.jzg.dataservice.axis.EstimateServiceStub" scope="singleton">
+        <constructor-arg ref="axisConfigContext"/>
+        <constructor-arg name="targetEndpoint" value="${guzhiapi.url}/EstimateService.svc"/>
+    </bean>
+
+
+    <bean id="orderServiceStub" class="com.jzg.dataservice.axis.OrderServiceStub" scope="singleton">
+        <constructor-arg name="configurationContext" ref="axisConfigContext"/>
+        <constructor-arg name="targetEndpoint" value="${easypassSvc.url}/Lead/commonorderservice/orderservice.asmx"/>
+    </bean>
+
+
+    <bean id="smsServiceStub" class="com.jzg.dataservice.axis.SmsServiceStub" scope="singleton">
+        <constructor-arg name="configurationContext" ref="axisConfigContext"/>
+        <constructor-arg name="targetEndpoint" value="${sendSmssvc.url}"/>
+    </bean>
+
+    <bean id="ipLocationStub" class="com.jzg.dataservice.axis.IpLocationStub" scope="singleton">
+        <constructor-arg name="configurationContext" ref="axisConfigContext"/>
+        <constructor-arg name="targetEndpoint" value="${ipLocsvc.url}"/>
+    </bean>
+
+    <bean id="ptvInterfaceServiceStub" class="com.jzg.dataservice.axis.PtvInterfaceServiceStub" scope="singleton">
+        <constructor-arg name="configurationContext" ref="axisConfigContext"/>
+        <constructor-arg name="targetEndpoint" value="${ptvInterface.url}?op=GetDealersByCityIdAndTrimId"/>
+    </bean>
+
+
+    <bean id="carSourceLuceneServiceStub" class="com.jzg.dataservice.axis.CarSourceLuceneServiceStub" scope="singleton">
+        <constructor-arg name="configurationContext" ref="axisConfigContext"/>
+    </bean>
+
+    <bean id="mServiceStub" class="com.jzg.dataservice.axis.MServiceStub" scope="singleton">
+        <constructor-arg name="configurationContext" ref="axisConfigContext"/>
+        <constructor-arg name="targetEndpoint" value="${carStyleBaseSvc.url}"/>
+    </bean>-->
+
+    <!--<bean id="axisConfigContext"
+          class="org.apache.axis2.context.ConfigurationContextFactory"
+          factory-method="createConfigurationContextFromFileSystem">
+        <constructor-arg index="0">
+            <null/>
+        </constructor-arg>
+        <constructor-arg index="1">
+            <null/>
+        </constructor-arg>
+    </bean>-->
+</beans>

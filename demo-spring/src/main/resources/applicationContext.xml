@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="helloDao" class="com.jzg.demo.spring.ioc.dao.HelloDaoImpl"></bean>
+
+    <!--<bean id="helloDao2" class="com.jzg.demo.spring.ioc.dao.HelloDaoImpl2"></bean>-->
+
+
+    <bean id="helloService" class="com.jzg.demo.spring.ioc.service.HelloServiceImpl" >
+    </bean>
+
+
+    <bean id="helloService2" class="com.jzg.demo.spring.ioc.service.HelloServiceImpl2">
+        <constructor-arg index="0" ref="helloDao"></constructor-arg>
+        <!--<constructor-arg name="helloDao" ref="helloDao"></constructor-arg>-->
+    </bean>
+
+
+    <bean id="helloService3" class="com.jzg.demo.spring.ioc.service.HelloServiceImpl3">
+        <property name="helloDao" ref="helloDao"></property>
+    </bean>
+</beans>

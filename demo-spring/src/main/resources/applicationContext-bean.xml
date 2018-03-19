@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="simpleBean" class="com.jzg.demo.spring.bean.SimpleBean" init-method="init" destroy-method="close" lazy-init="true"></bean>
+
+
+
+
+
+    <bean id="customer" class="com.jzg.demo.spring.bean.Customer">
+        <property name="id" value="1"></property>
+        <property name="name" value="张三"></property>
+    </bean>
+    <bean id="customer1" class="com.jzg.demo.spring.bean.Customer">
+        <property name="id" value="2"></property>
+        <property name="name" value="lisi"></property>
+    </bean>
+
+    <!--List属性示例-->
+    <bean id="listBean" class="com.jzg.demo.spring.bean.ListBean">
+        <property name="ips">
+            <list>
+                <value>192.168.0.1</value>
+                <value>192.168.0.2</value>
+            </list>
+        </property>
+
+        <property name="customers">
+            <list>
+                <ref bean="customer"/>
+                <ref bean="customer1"/>
+            </list>
+        </property>
+    </bean>
+
+
+    <!--Map属性示例-->
+    <bean id="mapBean" class="com.jzg.demo.spring.bean.MapBean">
+        <property name="keyVals">
+            <map>
+                <entry key="url" value="mvalue1"></entry>
+                <entry key="username" value="mvalue2"></entry>
+                <entry key="password" value="mvalue3"></entry>
+            </map>
+        </property>
+    </bean>
+
+
+    <bean id="mapBean2" class="com.jzg.demo.spring.bean.MapBean">
+    <property name="keyVals">
+        <map>
+            <entry key="url">
+                <value>mvalue1</value>
+            </entry>
+            <entry key="username">
+                <value>mvalue2</value>
+            </entry>
+            <entry key="password">
+                <value>mvalue3</value>
+            </entry>
+        </map>
+    </property>
+</bean>
+
+</beans>

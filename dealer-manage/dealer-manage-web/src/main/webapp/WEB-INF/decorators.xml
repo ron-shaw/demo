@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/layouts/">
+    <excludes>
+        <pattern>/static/*</pattern>
+        <pattern>/user/*</pattern>
+        <pattern>/toLogin</pattern>
+        <pattern>/404</pattern>
+        <pattern>/500</pattern>
+        <pattern>/noAuth</pattern>
+        <pattern>/sysUser/login</pattern>
+        <pattern>/payment/**</pattern>
+        <!--<pattern>/</pattern>-->
+        <!--<pattern>/belletin/*</pattern>
+        <pattern>/information/*</pattern>
+        <pattern>/mycollection/*</pattern>
+        <pattern>/rightMenu/*</pattern>
+        <pattern>/index/carButler</pattern>
+         <pattern>/appFeedBack/*</pattern>-->
+    </excludes>
+
+    <decorator name="default" page="default.jsp">
+        <pattern>/*</pattern>
+
+    </decorator>
+</decorators>

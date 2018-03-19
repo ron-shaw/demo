@@ -1,0 +1,77 @@
+/*选择贷款方案开始*/
+.zmclb{background:#fff;margin-top:10px;border-top:1px solid #dadee6; }
+.zescsj{border-bottom: 1px solid #e9e9e9;padding:10px 0;}
+.zsdf{width:100%;background-color: #fff;}
+.zesbfb{width:94%;margin: auto;box-sizing:border-box;}
+.zesbfb a{display:table;width: 100%;position: relative;}
+.zescsj aside{display: table-cell;position: relative;}
+.zes_as1{width:40%;height:5rem;vertical-align: middle;}
+.zes_as1 img{display:table-cell;width:100%; height: 100%;}
+.zes_as2{width:60%;vertical-align:top;padding-left:0.642rem;box-sizing:border-box;height:5rem;}
+.zti_p1{height:40px;font-size:0.892rem;line-height:20px;overflow:hidden;color:#111;}
+.zti_p2{font-size: 12px;line-height:13px;color: #999;padding-top: 0.2rem}
+.zti_p3{/*width:100%*/;font-size:12px;/*line-height:24px*/;color: #ff5a37;position: absolute;bottom:-1%;left:0.642rem;}
+.zti_p3 strong{font-size: 18px;}
+.zti_p4{position: absolute;right: 0;bottom: 0;display: block;}
+.zti_p4 label{font-size:12px;padding:0px 5px;color:#666;}
+.zsdrg{border:1px solid #4790ef;color:#4790ef;white-space: nowrap;}
+.zsdrs{border:1px solid #fe9400;color:#fe9400;}
+/*选择贷款方案结束*/
+
+/*选择金融方案开始*/
+.jr{width:94%;margin:0 auto;}
+.jrtit{height:25px;line-height:25px;font-size:14px;}
+.jrb{margin-top:5px;width:100%;}
+.jrbxl{width:45%;float:left;background-color: #fff;position:relative;}
+.jrbxr{width:45%;float:right;background-color: #fff;position:relative;}
+.jrbxl-t{padding:10px 0;border:1px #e5e5e5 solid;}
+.jrbxl-cl{width:80%;text-align:center;float:left;}
+.jrbxl-cr{width:20px;float:left;margin-top:2px;}
+.jrbxl-sj{width:9px;height:9px;margin:0 auto;display:block;}
+.jrbxl-b{position:absolute;top:40px;width:100%;background-color: #fff;border:1px #e5e5e5 solid;-webkit-transition:0.6s all ease;}
+.jrbxl-b ul{width:90%;float:right;}
+.jrbxl-b ul li{padding-left:10%;height:30px;line-height:30px;border-bottom:1px #dddddd solid;}
+.jrbxl-show{display:block;}
+.finance{width:100%;margin-top:10px;}
+.finance-t{height:60px;border:1px #e9e9ea solid;background-color: #fff;padding-top:6px;  }
+.finance-c{width:27%;float:left; }
+.finance-c:nth-child(1){width:46%}
+.finance-c span{display:block;text-align:center;font-size:18px;color:#4790ef;}
+.finance-c span:nth-child(2){margin-top:5px;}
+.finance-c1 span{font-size:14px;color:#3c3c3c;}
+.finance-c1 span:nth-child(2){color:#ff4c4d;}
+.finance-b{background-color: #fff;height:0;overflow:hidden;-webkit-transition:0.6s all ease;}
+.finance-show{height:auto}
+.finance-bc-t{width:100%;height:35px;line-height:35px;background-color:#fff;padding:0 5%;border-bottom:1px #ececec solid;}
+.finance-bc-t .jtx1{float:right;margin-top:12px;width:9px;height:9px;}
+.finance-bc-b{width:100%;}
+.finance-bc-b ul{width:95%;float:right;}
+.finance-bc-b ul li{display:block;width:100%;padding:4% 0;border-bottom:1px #dddddd solid;position:relative;}
+.finance-bc-bname{display:inline-block;font-size:16px;width:30%;}
+.finance-bc-binp{display:inline-block;width:60%;}
+.yzmbtn{width:90px;background-color: #ff7701;position:absolute;right:6%;top:10%;}
+.yzmbtn2{width:90px;position:absolute;right:6%;top:25%;}
+.yzmbtn2 img{width:100%;display: block;}
+.yzm_on{background-color: #ccc;}
+.inpgg{font-size:16px;width:100%;}
+.financebtn{background-color: #f3f6fa;padding:15px 0;}
+.loading{width:60px;margin:20% auto;}
+.tishi{position:relative;width:320px;text-align:center;margin:150px auto;font-size:14px;color:#999;}
+.tishi:after{content:'';display: block;position:absolute;top:10px;left:11px;width:35px;height:1px;background:#ddd;}
+.tishi:before{content: "";display: block;position:absolute;top:10px;right:11px;width:35px;height:1px;background:#ddd;}
+
+/*选择金融方案结束*/
+/*热门推荐开始*/
+.hotRe-ul{width:100%;}
+.hotRe-ul li{width:25%;float:left;text-align:center;margin:10px auto 0;}
+.hotRe-ul .hotRe-img{display:block;width:32px;height:32px;margin:0 auto;}
+.hotRe-ul .hotRe-txt{display:block;text-align:center;margin-top:9px;}
+/*热门推荐结束*/
+/*search开始*/
+.search{width:100%;height:37px;line-height:37px;background:#2d59a6;padding:0 3%;border:1px solid #2d59a6;}
+.search-l{position:relative;float:left;width:85%;height:25px;line-height:25px;margin-top:7px;border-radius:4px;background: #fff;}
+.search-l:before{width:15px;height:15px;content:'';display:block;float:left;margin-left:6px;margin-right:5px;margin-top:5px;background:url(../images/icon.png);background-size:100px auto;background-position:-54px -63px}
+.search-lBtn{display:none;position:absolute;right:10px;top:5px;width:15px;height:15px;background:url(../images/icon.png) no-repeat;background-size: 100px auto;background-position:-54px -84px;}
+.search-inp{height:24px;line-height:2px;color:#bcbcbc;width:80%;}
+.search-r{float:right;color:#fff;}
+/*search结束*/

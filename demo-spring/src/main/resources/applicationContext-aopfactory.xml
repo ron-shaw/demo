@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--配置自动代理 proxy-target-class=true表示支持CGLIB-->
+    <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
+
+    <!-- 被代理对象 -->
+    <bean id="hello" class="com.jzg.demo.spring.aop.factory.HelloImpl">
+    </bean>
+
+    <!-- 通知 -->
+    <bean id="helloAdvice" class="com.jzg.demo.spring.aop.factory.HelloAdvice"></bean>
+    <!--<bean id="helloAroundAdvice" class="com.jzg.demo.spring.aop.factory.HelloAroundAdvice"></bean>
+    <bean id="helloBeforeAdvice" class="com.jzg.demo.spring.aop.factory.HelloBeforeAdvice"></bean>
+    <bean id="helloAfterAdvice" class="com.jzg.demo.spring.aop.factory.HelloAfterAdvice"></bean>-->
+
+
+    <!-- 设定代理类-->
+    <bean id="helloProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <!--代理接口-->
+        <property name="proxyInterfaces" value="com.jzg.demo.spring.aop.factory.Hello"></property>
+        <!--通知-->
+        <property name="interceptorNames">
+            <list>
+                <value>helloAdvice</value>
+            </list>
+        </property>
+        <!--目标对象-->
+        <property name="target">
+            <ref bean="hello"/>
+        </property>
+    </bean>
+
+
+    <!--<bean id="exceptionLog" class="com.jzg.demo.spring.aop.factory.HelloAdvice"></bean>-->
+    <!--<aop:config>
+        <aop:pointcut id="helloPc" expression="execution(public * com.jzg.demo.spring.aop.factory.Hello.*(..))" />
+        <aop:advisor pointcut-ref="helloPc" advice-ref="helloAdvice" />
+    </aop:config>-->
+</beans>

@@ -1,0 +1,16 @@
+18-03-01 14:30:08,598 [main] Logfile closed: E:\work\test\demo-transaction\demo-transaction-jta\.\tmlog-1.log
+18-03-01 14:35:28,983 [main] Starting read of logfile E:\work\test\demo-transaction\demo-transaction-jta\.\tmlog0.log
+18-03-01 14:35:28,983 [main] Done read of logfile
+18-03-01 14:35:28,984 [main] Logfile closed: E:\work\test\demo-transaction\demo-transaction-jta\.\tmlog0.log
+18-03-01 14:37:25,596 [main] Starting read of logfile E:\work\test\demo-transaction\demo-transaction-jta\.\tmlog1.log
+18-03-01 14:37:25,597 [main] Done read of logfile
+18-03-01 14:37:25,597 [main] Logfile closed: E:\work\test\demo-transaction\demo-transaction-jta\.\tmlog1.log
+18-03-01 14:37:59,013 [main] Starting read of logfile E:\work\test\demo-transaction\demo-transaction-jta\.\tmlog2.log
+18-03-01 14:37:59,060 [main] Done read of logfile
+18-03-01 14:37:59,060 [main] Logfile closed: E:\work\test\demo-transaction\demo-transaction-jta\.\tmlog2.log
+18-03-01 14:46:04,255 [main] Starting read of logfile E:\work\test\demo-transaction\demo-transaction-jta\.\tmlog3.log
+18-03-01 14:46:04,296 [main] Done read of logfile
+18-03-01 14:46:04,296 [main] Logfile closed: E:\work\test\demo-transaction\demo-transaction-jta\.\tmlog3.log
+18-03-01 16:50:05,775 [main] Starting read of logfile E:\work\test\demo-transaction\demo-transaction-jta\.\tmlog4.log
+18-03-01 16:50:05,827 [main] Done read of logfile
+18-03-01 16:50:05,827 [main] Logfile closed: E:\work\test\demo-transaction\demo-transaction-jta\.\tmlog4.log

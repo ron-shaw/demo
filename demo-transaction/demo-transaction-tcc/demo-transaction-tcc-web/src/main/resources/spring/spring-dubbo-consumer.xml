@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd  
+            http://code.alibabatech.com/schema/dubbo  
+            http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!-- 消费者应用名称 -->
+    <dubbo:application name="${dubbo.application.name}"/>
+    <!--<dubbo:application name="demo-front-web"/>-->
+    <!-- Zookeeper注册中心 -->
+    <dubbo:registry address="${dubbo.registry.address}"/>
+    <!--<dubbo:registry address="zookeeper://192.168.0.128:2181"/>-->
+
+    <!-- 订单接口 -->
+    <dubbo:reference id="orderService" interface="com.jzg.demo.transaction.tcc.order.api.OrderService" check="false" version="1.0.0"/>
+
+    <!--客户接口-->
+    <dubbo:reference id="customerService" interface="com.jzg.demo.transaction.tcc.customer.api.CustomerService" check="false" version="1.0.0"/>
+
+    <!--库存接口-->
+    <dubbo:reference id="stockService" interface="com.jzg.demo.transaction.tcc.stock.api.StockService" check="false" version="1.0.0"/>
+    <dubbo:reference id="productService" interface="com.jzg.demo.transaction.tcc.stock.api.ProductService" check="false" version="1.0.0"/>
+</beans>

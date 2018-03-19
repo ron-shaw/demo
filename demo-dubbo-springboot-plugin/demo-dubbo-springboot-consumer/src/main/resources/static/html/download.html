@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body><!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="baidu-site-verification" content="H6od0XC7DJ" />
+    <title>下载页面</title>
+    <link type="text/css" href="http://res.jingzhengu.com/ptvm/6.0/css/comm.css?v=1" rel="stylesheet" />
+    <link type="text/css" href="http://res.jingzhengu.com/ptvm/6.0/css/zw.css?v=1" rel="stylesheet" />
+    <script type="text/javascript" src="/static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/jzg.Base.js"></script>
+</head>
+<body>
+<header>
+    <div class="per_tit">
+        <a href="javascript:Common.goBack();">
+            <i class="per_icon_tit jtx"></i>
+        </a>
+        <span class="per_tit_span">APP下载</span>
+        <a href="/" class="inr ">
+            <em>首页</em>
+        </a>
+    </div>
+</header>
+<section>
+    <div class="cont">
+        <div class="zw_down_bg" >
+            <img class="zw_down_bg_img" src="http://res.jingzhengu.com/ptvm/6.0/images/down_bg.png" alt=""/>
+            <div class="zw_down_sh">
+                <p>精真估</p>
+                <p>您身边的二手车</p>
+                <img class="zw_down_dui" src="http://res.jingzhengu.com/ptvm/6.0/images/down_dui.png" alt=""/>
+                <div class="line-bo"></div>
+            </div>
+            <div class="zw_down_cc clearfix">
+                <div class="zw_down_cont">
+                    <img class="zw_down_logo" src="http://res.jingzhengu.com/ptvm/6.0/images/down_logo.png" alt=""/>
+                    <p class="zw_down_txt mt10">买卖 置换二手车 先来估个价</p>
+                    <div class="zw_down_btn clearfix mt10"><!--按钮开始-->
+                        <div class="btn">
+                            <a href="javascript:void(0)">下载APP</a>
+                        </div>
+                    </div><!--按钮结束-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="zyybg" id="yybg" style="display:none;">
+        <img src="http://res.jingzhengu.com/ptvm/6.0/images/rts.png"/>
+    </div>
+</section>
+<div style="display:none;">
+    <!--Baidu 百度统计 -->
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0eee2531e841febe6c5cfcff2296b5d2' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <!-- cnzz 统计-->
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254095408'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254095408' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+    function isWeiXin() {
+        var ua = window.navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    $(function () {
+        $(".btn a").click(function () {
+            if (isWeiXin()) {
+                $(".zyybg").show();
+            } else {
+
+                $(this).attr("href", "http://www.jingzhengu.com/app/download.shtml");
+            }
+        });
+    });
+</script>
+
+</html>

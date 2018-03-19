@@ -1,0 +1,384 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body,div,ul,li,ol,h1,h2,h3,h4,h5,p,img,input,dl,dt,i,dd,em,b,a,textarea{margin:0;padding:0;border:0;list-style:none;font-style:normal;box-sizing:border-box;font-weight:normal;font-size:14px;}
+body,select,button{font-family:"Microsoft YaHei", arial,SimSun;font-size-adjust:none;font-stretch:normal;color:#3c3c3c;background-size:100% auto;background-color:#fff;}
+s{text-decoration:none}
+a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+input, textarea {outline: none;-webkit-appearance: none;}
+.bai_se{background-color:#fff;}
+.clearfix:after{content:"";display:block;clear:both;}
+.clearfix{zoom:1;}
+.clear{clear:both;}
+.left{float:left;}
+.right{float:right;}
+img{max-width:100%;height:auto;-ms-interpolation-mode: bicubic;}
+a{text-decoration:none;color:#333;}
+.bor-0{border:none !important;}
+.born-t{border-top: none !important;}
+.bor-t{border-top:1px solid #ddd;}
+.bor-rano{border-radius:0 !important;}
+.posabs{position:absolute !important;top:0;right:0;width: 100%;  height: 100%;}
+.text-r{text-align:right;}
+.backbg1{background-color:#f0f3f8 !important;}
+.backbgf{background-color:#fff !important;}
+.backbg2{background-color:#fafbfd !important;}
+.backf2f{background-color:#f2f4f7 !important;}
+.z-1,.z-2,.z-3,.z-4,.z-5,.z-6,.z-7,.z-8,.z-9,.z-10,.z-20{position:relative;}
+.z-20{z-index:20 !important;}
+.z-10{z-index:10 !important;}
+.z-9{z-index:9 !important;}
+.z-8{z-index:8 !important;}
+.z-7{z-index:7 !important;}
+.z-6{z-index:6 !important;}
+.z-5{z-index:5 !important;}
+.z-4{z-index:4 !important;}
+.z-3{z-index:3 !important;}
+.z-2{z-index:2 !important;}
+.z-1{z-index:1 !important;}
+
+
+.zyyxg{-webkit-box-shadow:0 0 10px #d0daeb; -moz-box-shadow:0 0 10px #d0daeb;box-shadow:0 0 10px #d0daeb;}/*阴影的样式*/
+
+/* 清除input叉开始 */
+input::-webkit-search-cancel-button{
+    display: none;
+}
+/* 清除input叉结束 */
+/* 透明开始 */
+.opac2{filter:alpha(opacity=20);opacity: 0.2;}
+/* 透明结束 */
+/*标题ico开始*/
+.titico{font-size:13px;height:24px;line-height:24px;width:94%;margin:4px auto;}
+.titico:before{content: '';margin-right:4px;display:inline-block;width:3px;height:9px;background:#4790ef;border-radius:2px;}
+/*标题ico结束*/
+/* 圆角开始 */
+.bor-ra{
+    -moz-border-radius: 0.3125rem; /* Firefox */
+    -webkit-border-radius: 0.3125rem; /* Safari 和 Chrome */
+    border-radius: 0.3125rem; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */}
+.bor-ra1{
+    -moz-border-radius:50%; /* Firefox */
+    -webkit-border-radius:50%; /* Safari 和 Chrome */
+    border-radius:50%; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */}
+.bor-ra2{
+    -moz-border-radius: 0.1125rem; /* Firefox */
+    -webkit-border-radius: 0.1125rem; /* Safari 和 Chrome */
+    border-radius: 0.1125rem; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */}
+/* 圆角结束 */
+/* 按钮开始 */
+.btn{background-color:#4b92ec;border-radius:5px;padding:3% 0;text-align:center;margin:0 auto;}
+.btn a{display:block;color:#fff;}
+/* 按钮结束 */
+/* bor开始 */
+.borb0{border-bottom:0 !important;}
+/* bor结束 */
+/* 分割分开始 */
+.fgx{width:100%;height:6px;background-color: #f5f5f5;border-top:1px solid #eeeeee;border-bottom:1px solid #eeeeee;}
+/* 分割分结束 */
+/* 高度开始 */
+.hei12{height:12px !important;}
+/* 高度结束 */
+/*没有页面开始*/
+.no-page{position:relative;height:auto;text-align:center;}
+.no-page .no-page-c{width:120px;margin:0 auto;padding-top:100px;}
+.no-page .no-page-c img{width:120px;height:120px;margin-bottom:20px;}
+/*没有页面结束*/
+/* 字体开始 */
+.ft12{font-size:12px !important;}
+.ft14{font-size:14px !important;}
+.ft15{font-size:15px !important;}
+.ft16{font-size:16px !important;}
+.ft18{font-size:18px !important;}
+/* 字体结束 */
+/* 颜色开始 */
+.cola{color:#aaa !important;}
+.colred{color:#ff0000 !important;}
+.colred1{color:#fb3b1f !important;}
+.cold{color:#ddd !important;}
+.col6{color:#666 !important;}
+.col9{color:#999 !important;}
+.col3{color:#333 !important;}
+.col479{color:#4790ef !important;}
+.colblue{color:#4b92ec !important;}
+.colf{color: #fff !important;}
+.col5087e3{color: #5087e3 !important;}/*蓝色字体*/
+.colfc8c08{color: #fc8c08 !important;}/*橙色字体*/
+/* 颜色结束 */
+/* mar开始 */
+.mt01{margin-top:-1px !important;}
+.mt0{margin-top:0 !important;}
+.mt5{margin-top:0.315rem !important;}
+.mt8{margin-top:0.5rem !important;}
+.mt10{margin-top:0.625rem !important;}
+.mt14{margin-top: 14px !important;}
+.mt15{margin-top:0.9375rem !important;}
+.mt20{margin-top:1.25rem !important;}
+.mt30{margin-top:1.875rem !important;}
+.mt40{margin-top:2.5rem !important;}
+.mt48{margin-top:3rem !important;}
+.mt72{margin-top:0 !important;}
+.mb10{margin-bottom:0.625rem !important;}
+.mb15{margin-bottom:0.9375rem !important;}
+.mb40{margin-bottom:2.5rem !important;}
+.mr0{margin-right:0 !important;}
+.mr10{margin-right:10px !important;}
+.mr15{margin-right:15px !important;}
+.mr20{margin-right:20px !important;}
+.mr30{margin-right:30px !important;}
+.mr50{margin-right: 50px!important;}
+.ml10{margin-left:10px !important;}
+.ml20{margin-left:20px !important;}
+.ml21{margin-left: 21%!important;}
+/* mar结束 */
+/* pad开始 */
+.pt0{padding-top:0 !important;}
+.pt10{padding-top:10px !important;}
+.pt20{padding-top:0.5rem !important;}
+.pt30{padding-top:0.75rem !important;}
+.pt40{padding-top:1rem !important;}
+.pb10{padding-bottom:0.25rem !important;}
+.pb20{padding-bottom:0.5rem !important;}
+.pb30{padding-bottom:0.75rem !important;}
+.pb40{padding-bottom:1rem !important;}
+.ptb15{padding:15px !important;}
+.pr0{padding-right:0 !important;}
+/* pad结束 */
+/* 宽度开始 */
+
+.wid30_s{width: 30%!important;}
+.wid80_s{width: 80%!important;}
+.wid90_s{width: 90%!important;}
+.wid94_s{width: 94%!important;margin:0 auto;}
+.wid96_s{width: 96%!important;}
+.wid97_s{width: 97%!important;}
+.wid100_s{width: 100%!important;}
+/* 宽度结束 */
+
+/*公共的箭头样式开始*/
+.jtx{display: inline-block;vertical-align: 3px;border-left: 1px solid #b0b0b0;border-bottom: 1px solid #b0b0b0;width: 6px;height:6px;margin-left:5px; -webkit-transform: rotate(-45deg); transform: rotate(-45deg);}
+/*公共的箭头样式结束*/
+/*灰色背景边框开始*/
+.zhsbg{height:8px;width:100%;background:#f0f3f8;border-top:1px solid #dadee6;border-bottom:1px solid #dadee6;}
+/*灰色背景边框结束*/
+
+/*公共提示语开始*/
+.ggts{text-align:center;padding:3%;font-size:14px;color:#fd4312;border-top:1px #ebe9e9 solid;border-bottom:1px #ebe9e9 solid;}
+/*公共提示语结束*/
+/*遮罩开始*/
+.zhezhao{position:fixed;z-index:50;width: 100%;height: 100%;top: 0;right: 0;left: 0;background: rgba(0, 0, 0, 0.6);}
+/*遮罩结束*/
+/*公共内容开始*/
+.cont{width:100%;background-color:#fff;position:relative;top:0;left:0;z-index:0;}
+/*公共内容结束*/
+/*App下载浮层开始*/
+.ad-app{padding:0 3%;position:fixed;top:0;width:100%;height:40px;line-height:40px;background:#313131;}
+.ad-close{float:left;width:9px;height:9px;margin-top:3px;margin-right:-4px;display:block;background:url(../images/icon.png) left top no-repeat;background-size:100px auto;background-position:0 -109px}
+.ad-txt{float:left;font-size:12px;color:#fff;}
+.ad-txt:before{content:'';margin-right:5px;float:left;margin-top:5px;background:url(../images/icon.png) no-repeat;width:28px;height:28px;background-size:100px auto;background-position:0 -123px;}
+.ad-btn-download{width:60px;height:21px;line-height:21px;color:#f5f5f5;margin-top:10px;text-align:center;float:right;background:#5087e3;border-radius:10px;font-size:12px;}
+/*App下载浮层结束*/
+/*首页banner开始*/
+.nav{width:100%;position:relative;top:40px;left:0;padding-bottom:35px;}
+.nav-t{position:absolute;width:94%;left:3%;top:5.5px;}
+.nav-add{position:absolute;left:0;top:0px;float:left;font-size:13px;color:#fff;}
+.nav-add:after{content:'';float:right;width:9px;height:5px;margin-top:6px;margin-left:4px;background:url(../images/icon.png) no-repeat;background-size:100px auto;background-position:0 -178px}
+.nav-btn-indexC{position:relative;width:87px;margin:0 auto;height:100px;}
+.nav-btn-index{float:left;position:relative;left:0;top:0px;font-size:16px;color:#fff;}
+.nav-btn-index:after{content:'';display:block;width:17px;height:2px;background:#fff;margin-left:7px;margin-top:5px;}
+.nav-btn-cgj{float:left;position:relative;left:18px;top:5px;color:#fff;font-size:12px;}
+.nav-btn-rb{position:absolute;right:0;top:2px;text-indent:-999em;width:14px;height:13px;background:url(../images/icon.png) no-repeat;background-size:100px auto;background-position:0 -156px}
+.nav-txt{font-size:16px;color:#fff;position:absolute;left:0;top:53px;width:100%;text-align:center;}
+.navimg{width:100%;display:inline-block;margin:0 auto;}
+/*首页banner结束*/
+
+
+/*定位城市样式开始*/
+.posabs{position: absolute !important;top: 0;right: 0;width: 100%;height: 100%;}
+.jzgzlist{position:relative;top:0px;left:0;}
+.xzzm{width:100%;}
+.xzzm ul li{width:20%;float:left;text-align:center;height:34px;line-height:34px;border-right:1px #dadee6 solid;border-bottom:1px #dadee6 solid;}
+.xzzm ul li:nth-child(5),.xzzm ul li:nth-child(10),.xzzm ul li:nth-child(15),.xzzm ul li:nth-child(20),.xzzm ul li:nth-child(25){border-right:0 #dadee6 solid;}
+.xzzm ul li:last-child,.xzzm ul li:nth-last-child(2){border-bottom:0;}
+.xzzm ul li a{display:block;}
+.zdwcs{position: relative;left:0;top:0;background:#fff;height:40px;line-height:40px;border-top:1px solid #e9e9e9;}
+.zdw_spn1{display:block;width:100%;padding-left:30px;margin:auto;color:#135db8;box-sizing: border-box;}
+.zdw_spn1:before{position: absolute;left:15px;top:10px;display:block;width:15px;height:20px;background: url("../images/icon.png") no-repeat 0px -16px;background-size:100px auto;content: '';}
+.list-tit,.list-tit1{height:25px;line-height:25px;padding-left:10px;background-color:#ededee;font-size:0.75rem;color:#6c6c6c;}
+.list-tit1{background-color:#4b92ec;color:#fff;}
+.list-titH36{height:36px;;line-height:36px}
+/*定位城市样式结束*/
+
+/*公共带三角头部开始*/
+.header2{ width: 100%; height:30px;position:relative;  top: 0;  left: 0;  background-color: #fff;  z-index: 2;  }
+.per_tit{border:1px solid #dadee6;border-left:none;border-right:none;display:block;height:38px;line-height:34px;position:relative;text-align: center; background: #2d59a6;z-index: 10; }
+.per_tit a{display: block;height: 30px; width:38px;position: absolute;top:3px;left: 0;}
+.per_tit a.per-titr{height: 16px; width:16px;position: absolute;top:10px;left:auto;right:10px;background:url(../images/icon.png);background-position:-44px -42px;background-size:100px auto;}
+span.per_tit_span{color: #fff;font-size: 17px;}
+i.per_icon_tit{transform: rotate(45deg); border-color: #fff; height: 10px; width: 10px;-webkit-transform: rotate(45deg);}
+/*公共带三角头部结束*/
+
+
+/* 分页开始 */
+.page1{margin:0 auto;text-align:center;position:relative;margin-top:10px;padding-bottom:40px;}
+.z_mt20{margin-top:20px;}
+.pagebox { display: inline-block;text-align: center; position: relative;}
+.pagebox{*display:inline;}
+.pagebox p { display: inline; }
+.page1 a {display:block;float:left;position:relative;cursor:pointer;margin-right:4px;padding:0 5px;line-height:26px;text-align:center;border: 1px #c2c2c2 solid;color:#8c8c8c;font-size: 14px;text-decoration:none;background-color:#fff;}
+.page1 a:hover{background-color:#fff;border:1px #4b92ec solid;color:#4b92ec !important;}
+.page1 .selected {border: 1px #4b92ec solid;background-color:#4b92ec;color:#fff;}
+.page1 .selected:hover{background-color:#4b92ec !important;color:#fff !important;}
+.page1 a.zse_le {border: 1px #f1f5f8 solid;color:#ccc;background-color:#f1f5f8;}
+.page1 .uppage{width:44px;padding:0px;position:relative;top:0px;}
+.page1 .uppage:hover {width:44px;padding:0px;position:relative;top:0px;}
+
+.page1 .downpage {width:44px;padding:0px;position:relative;top:0px;}
+.page1 .downpage:hover {width:44px;padding:0px;border:1px #4b92ec solid;color:#4b92ec;position:relative;top:0px;}
+
+.pagebox .num-info{line-height:26px;font-weight:400;}
+/* 分页结束 */
+
+
+/*尾部开始*/
+
+footer{ padding:20px 0; margin-top: 20px; }
+.footer{text-align: center;}
+.foot_nav{ display: inline-block;}
+.foot_nav li{ padding: 0 5px; height: 20px; line-height: 20px; float: left;}
+.foot_nav li a{font-size: 12px;}
+.foot_link{display: inline-block;width:230px;}
+.foot_link li{text-align:left;float: left;height: 20px; line-height: 20px; overflow: hidden;width:49%; white-space: nowrap; text-overflow: ellipsis;}
+.foot_link li a{color: #4790ef; font-size: 10px;}
+/*尾部结束*/
+
+
+/*下拉开始*/
+.all_list{position:relative;top:0;left:0;}
+
+.all_list_ul li{display:block;height:44px;line-height:44px;border-bottom:1px #e9eaec solid;position:relative;width:94%;float:right;}
+.all_list_ul li a{display: block;font-size: 16px;position: relative;height:45px;width:100%;}
+.all_list_ul li a span{padding-right:10px;color:#3b3b3b;}
+.all_list_ul li a span:nth-child(1):before{content: '';margin-right:7px;position:relative;top:3px;display:inline-block;width:22px;height:17px;background:url('../images/icon.png') no-repeat;background-size:100px auto;background-position:0px -202px}
+.all_list_ul li a span.al-ico2:nth-child(1):before{width:22px;height:20px;background-position:0px -223px;top:3px;}
+.all_list_ul li a span.al-ico3:nth-child(1):before{width:22px;height:20px;background-position:0px -248px;top:5px;}
+.all_list_ul li a span.al-ico4:nth-child(1):before{width:22px;height:22px;background-position:2px -272px;top:5px;}
+.all_list_ul li a .al_title{position: absolute;width:60%;white-space:nowrap;text-align:right;overflow:hidden;text-overflow:ellipsis;top:0;right: 12px;font-size:12px;color:#9c9c9c;}
+.all_list_ul li a .al_tit_r10{right: 10px;}
+
+.all_list_ul li a .inp120{width:120px;height:30px;padding:5px 4px;margin-top: 5px;text-align: right;color:#9c9c9c;}
+.all_list_ul li a .on{color:#bcbcbc;}
+.all_list_ul li a em.al_em{position: absolute; top:0;right: 16px; color: #3b3b3b;}
+i.per_icon_r{position: absolute;top:20px; right: 17px;transform: rotate(225deg);-webkit-transform: rotate(225deg);}
+/*下拉结束*/
+
+
+
+
+/*选择品牌标题开始*/
+.cont-tit{height:36px;line-height:36px;font-size:13px;color:#3b3c3c;padding-left:14px;}
+/*选择品牌标题结束*/
+/*首页爱车估值开始*/
+.btn-cont{width:100%;height:50px;padding:0 3%;}
+.btn-contl{float:left;width:49%;border-radius:5px;float:left;text-align:center;color:#fff;font-size:14px;height:33px;line-height:33px;margin-top:9px;background:#ff7701;box-shadow:0 1px 2px #eeffff; }
+.btn-cont2{float:right;background:#528df3;box-shadow:0 1px 2px #ffffff; }
+.btn-qk{background:#fff;}
+.btn-qk .btn-contl{background:#fff;border:1px #2b6ddd solid;color:#2b6ddd;}
+.btn-qk .btn-contl:before{position:relative;top:4px;padding-left:10px;content:'';display:inline-block;width:22px;height:20px;background:url(../images/icon.png) no-repeat;background-size:100px auto;background-position:-22px -69px;}
+.btn-qk .btn-cont2:before{position:relative;top:4px;padding-left:10px;content:'';display:inline-block;width:22px;height:22px;background:url(../images/icon.png) no-repeat;background-size:100px auto;background-position:-22px -94px;}
+
+/*开始结束*/
+.new{width:100%;font-size:12px;margin:0 auto;height:40px;line-height:40px;border-top:1px #eaeaea solid;}
+.newcont{width:100%;background:#fff;}
+.newcontW{width:94%;margin:0 auto;display:-webkit-box;padding: 0;}
+.newcontwTxt{line-height:20px;padding:5px 0;font-size:13px;}
+.newimgl{-webkit-box-flex:1;}
+.newimgl img{display:block;}
+.newimgl:nth-child(1){padding-right:2%;}
+.newimgl:nth-child(3){padding-left:2%;}
+/*最新资讯结束*/
+/*/!*请选择您的购车现金预算开始*!/
+.budget{width:100%;background:#fff;height:130px;}
+.budget-t{width:100%;position:relative;top:8height:25px;}
+.budget-price{position:absolute;right:0;top:0;}
+.bchi{width:86%;margin:0 auto;margin-top:47px;height:30px;line-height:30px;position:relative;}
+.bchix ul{display: -webkit-box;width:100%;}
+.bchix ul li{position:relative;display:block;height:17px;line-height:17px;border-right:1px #cfcfcf solid;-webkit-box-flex: 1;width:10px;}
+.bchix ul li:before{content:'';position:absolute;top:-22px;left:-4px;color:#5b5b5b;}
+.bchix ul li:after{content:'';position:absolute;top:-22px;left:auto;right:-15px;color:#5b5b5b;}
+.bchix ul li:nth-child(1):before{content:'0'}
+.bchix ul li:nth-child(2):before{content:'5'}
+.bchix ul li:nth-child(3):before{content:'10'}
+.bchix ul li:nth-child(4):before{content:'15'}
+.bchix ul li:nth-child(5):before{content:'20'}
+.bchix ul li:nth-child(6):before{content:'30'}
+.bchix ul li:nth-child(7):before{content:'50'}
+.bchix ul li:nth-child(8):before{content:'70'}
+.bchix ul li:nth-child(9):before{content:'100'}
+.bchix ul li:nth-child(9):after{content:'不限'}
+.bchix ul{border-left:1px #cfcfcf solid;}
+
+.bchixbg{width:100%;height:5px;background:#f5f5f5;position:absolute;top:5px;left:0;}
+.bchixbghui{width:100%;height:5px;background:#f5f5f5;position:absolute;z-index:3;}
+.bchixbgblue{width:100%;height:5px;background:#4790ef;position:absolute;z-index:2;}
+
+.bchixbtn{position:absolute;top:0;left:0px;width:100%;}
+.bchixbtn1{position:absolute;top:20px;text-align:center;color:#fff;left:0px;width:23px;height:34px;background:url(../images/icon.png) no-repeat;background-size: 100px auto;background-position:-43px 0;}
+.bchixbtn .txt1,.bchixbtn .txt2{display:block;font-size:12px;position:relative;top:5px;}
+.txt1t,.txt2t{width:28px;height:28px;border-radius:50%;position:absolute;top:-80px;left:0;display:block;background:rgba(71,144,239,0.7);}
+.bchixbtn2{position:absolute;left:0px;}
+/!*请选择您的购车现金预算结束*!/*/
+
+
+
+/*首页爱车估值结束*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*请选择您的购车现金预算开始*/
+.budget{width:100%;background:#fff;height:118px;}
+.budget-t{width:100%;position:relative;top:8px;height:25px;}
+.budget-price{position:absolute;right:0;top:0;color:#3b3c3c}
+.budget-tit{color:#bcbcbc}
+.bchi{width:86%;margin:0 auto;margin-top:42px;height:30px;line-height:30px;position:relative;}
+.bchix ul{display: -webkit-box;width:100%;}
+.bchix ul li{position:relative;display:block;height:17px;line-height:17px;border-right:1px #cfcfcf solid;-webkit-box-flex: 1;width:10px;}
+.bchix ul li:before{content:'';position:absolute;top:-22px;left:-4px;color:#5b5b5b;}
+.bchix ul li:after{content:'';position:absolute;top:-22px;left:auto;right:-15px;color:#5b5b5b;}
+.bchix ul li:nth-child(1):before{content:'0'}
+.bchix ul li:nth-child(2):before{content:'5'}
+.bchix ul li:nth-child(3):before{content:'10'}
+.bchix ul li:nth-child(4):before{content:'15'}
+.bchix ul li:nth-child(5):before{content:'20'}
+.bchix ul li:nth-child(6):before{content:'30'}
+.bchix ul li:nth-child(7):before{content:'50'}
+.bchix ul li:nth-child(8):before{content:'70'}
+.bchix ul li:nth-child(9):before{content:'100'}
+.bchix ul li:nth-child(9):after{content:'不限'}
+.bchix ul{border-left:1px #cfcfcf solid;}
+
+.bchixbg{width:100%;height:5px;background:#f5f5f5;position:absolute;top:5px;left:0;}
+.bchixbghui{width:100%;height:5px;background:#f5f5f5;position:absolute;z-index:3;}
+.bchixbgblue{width:100%;height:5px;background:#4790ef;position:absolute;z-index:2;}
+
+.bchixbtn{position:absolute;top:0;left:0px;width:100%;}
+.bchixbtn1{position:absolute;top:20px;text-align:center;color:#fff;left:0px;width:22px;height:32px;background:url(../images/icon.png) no-repeat;background-size: 100px auto;background-position:-44px 0;}
+.bchixbtn .txt1,.bchixbtn .txt2{display:block;font-size:12px;position:relative;top:5px;}
+.txt1t,.txt2t{width:28px;height:28px;border-radius:50%;position:absolute;top:-85px;left:0;display:block;background:rgba(71,144,239,0.7);}
+.bchixbtn2{position:absolute;left:0px;}
+/*请选择您的购车现金预算结束*/
